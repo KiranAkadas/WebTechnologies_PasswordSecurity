@@ -1,0 +1,25 @@
+TSL-12.0
+Password Security
+
+Description:
+Design a system where the account of a user is secured, which can be realized as:-
+? Setting constraints for user password with at least 8 characters which includes digits, alphabets and special characters.
+? Hash based authentication
+The user creates an account. Their password is hashed and stored in the database. At no point is the plain-text (unencrypted) password ever written to the hard drive. When the user attempts to login, the hash of the password they entered is checked against the hash of their real password (retrieved from the database). If the hashes match, the user is granted access. If not, the user is told they entered invalid login credentials.
+
+
+Approach:
+The client side application uses Angular to serve the registration and Login page.
+Both the pages have forms validated using form-control.
+On The server side is a NodeJS Server serving all the functionalities for login and signup.
+Passwords are never stored on the server. Instead the passwords are stored after hashing. And not just plain hashing, we add a random text called salt to the password and then hash it.
+Salts defend against dictionary attacks or against their hashed equivalent, a pre-computed rainbow table attack.[1] Since salts do not have to be memorized by humans they can make the size of the rainbow table required for a successful attack prohibitively large without placing a burden on the users. Since salts are different in each case, they also protect commonly used passwords, or those users who use the same password on several sites, by making all salted hash instances for the same password different from each other.
+Whenever a user tries to login, the hashes are computed after adding the salt for that username(stored in db) and then comparing the passwords.
+
+
+B Division
+
+Team Members-
+Kiran Akadas - 92 - 01FE16BCS092
+Manas Kumar - 98 - 01FE16BCS098
+Manas Vyas - 99 - 01FE16BCS099
