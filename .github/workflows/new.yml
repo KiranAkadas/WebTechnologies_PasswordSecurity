@@ -31,6 +31,7 @@ jobs:
             const repo_update=context.payload.pull_request.head.repo.updated_at;
             const repo_push=context.payload.pull_request.head.repo.pushed_at;
             const contri=context.payload.pull_request.head.repo.contributors_url
+            const base=context.payload.pull_request.base.ref;
             
             await github.issues.createComment({
               issue_number: context.issue.number,
