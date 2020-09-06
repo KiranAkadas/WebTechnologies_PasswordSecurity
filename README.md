@@ -6,7 +6,7 @@ A Simple web Application that uses Angular, Node, Express and Mongo. We have a s
 
 Please read WT_Manual for more details
 
-
+Configured a new action on this repository. Yay!!
 
 KLE TECHNOLOGICAL UNIVERSITY,
 SCHOOL OF COMPUTER SCIENCE AND ENGINEERING,
