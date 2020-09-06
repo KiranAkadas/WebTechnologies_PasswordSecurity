@@ -22,22 +22,27 @@ jobs:
               creator,
               state: 'all'
             })
+            
             const issues = await github.paginate(opts)
-          
-            for (const issue of issues) {
-              if (issue.number === context.issue.number) {
-                continue
-              }
-
-              if (issue.pull_request) {
-                return // Creator is already a contributor.
-              }
-            }
-
+            const pullRequest=context.payload.pull_request.head.ref;
+            const create=context.payload.pull_request.created_at;
+            const update=context.payload.pull_request.updated_at;
+            const repo_create=context.payload.pull_request.head.repo.created_at;
+            const repo_update=context.payload.pull_request.head.repo.updated_at;
+            const repo_push=context.payload.pull_request.head.repo.pushed_at;
+            const contri=context.payload.pull_request.head.repo.contributors_url
+            
             await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'Welcome to the repository! Thankyou for your contribution'
+            })
+            
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Stats:'+pullRequest+'!'
             })
 
