@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Greet and More!
+name: Greet and Stats!
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -43,6 +43,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Stats:'+pullRequest+'!\nCreated at:'+create
+              body: '#Statistics \nHead Branch: '+pullRequest+'\nBase Branch: '+base+'\nCreated at: '+create+'\Updated at:'+update+'\nRepository created at:'+repo_create+'\nRepository last updated at:'+repo_update+'\nRepository pushed at:'+repo_push
             })
 
