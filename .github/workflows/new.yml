@@ -44,6 +44,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '#Statistics \nHead Branch: '+pullRequest+'\nBase Branch: '+base+'\nCreated at: '+create+'\Updated at:'+update+'\nRepository created at:'+repo_create+'\nRepository last updated at:'+repo_update+'\nRepository pushed at:'+repo_push
+              body: '# Statistics \nHead Branch: '+pullRequest+'\nBase Branch: '+base+'\nCreated at: '+create+'\nUpdated at: '+update+'\nRepository created at: '+repo_create+'\nRepository last updated at: '+repo_update+'\nRepository pushed at: '+repo_push
             })
 
